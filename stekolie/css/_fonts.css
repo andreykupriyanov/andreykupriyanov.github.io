@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'SFUID';
+	src: url('../fonts/SFUIDisplay-Regular.woff2') format('woff2'),
+		url('../fonts/SFUIDisplay-Regular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUID';
+	src: url('../fonts/SFUIDisplay-Bold.woff2') format('woff2'),
+		url('../fonts/SFUIDisplay-Bold.woff') format('woff');
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUID';
+	src: url('../fonts/SFUIDisplay-Heavy.woff2') format('woff2'),
+		url('../fonts/SFUIDisplay-Heavy.woff') format('woff');
+	font-display: swap;
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerRegular.woff2') format('woff2'),
+			url('../fonts/MullerRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: 'Muller';
+	src: url('../fonts/MullerBold.woff2') format('woff2'),
+		url('../fonts/MullerBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Muller';
+		src: url('../fonts/MullerExtraBold.woff2') format('woff2')
+			url('../fonts/MullerExtraBold.woff') format('woff');
+		font-weight: 800;
+		font-style: normal;
+	}

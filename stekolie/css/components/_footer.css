@@ -1,0 +1,58 @@
+.footer {
+	position: relative;
+	margin-top: -3px;
+	padding: 90px 0;
+	background-color: #172a32;
+	font-size: 12px;
+	color: var(--white-color);
+}
+
+.footer__container {
+	justify-content: space-between;
+}
+
+.footer__logo {
+	width: 10%;
+	margin-right: 68px;
+}
+
+.footer__contacts {
+	padding-top: 15px;
+	width: 20%;
+}
+
+.footer__social-media {
+	padding-top: 15px;
+	width: 20%;
+}
+
+.footer__fr1 {
+	position: relative;
+	background: url('../../img/fr1-logo.svg')0 0/auto no-repeat;
+	padding-top: 93px;
+	margin-right: 30px;
+}
+
+.footer__fr1:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: -50px;
+	background-color: var(--white-color);
+	width: 1px;
+	height: 103px;
+	opacity: 0.6;
+}
+
+.footer-item:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.footer-link {
+	transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+	color: var(--blue-color);
+	transition: color 0.3s ease-in-out;
+}

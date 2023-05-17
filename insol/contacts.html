@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Insol</title>
+  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NotoSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Raleway-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Teko-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header header--contacts">
+  <div class="container header__container grid">
+    <a href="/" class="logo header__logo">
+      <img loading="lazy" src="img/logo.svg" class="image" width="146" height="44" alt="Insol Logo">
+    </a>
+    <div class="header__right-side" data-menu>
+      <nav class="nav header__nav">
+        <ul class="nav__list list-reset flex">
+          <li class="nav__item">
+            <a href="cases" class="nav__link">Cases</a>
+          </li>
+          <li class="nav__item">
+            <a href="/#i-solutions" class="nav__link">Consulting</a>
+          </li>
+          <li class="nav__item">
+            <a href="/#team" class="nav__link">Team</a>
+          </li>
+          <li class="nav__item">
+            <a href="contacts" class="nav__link">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="mailto:info@insol.ai" class="mail-link header__mail">
+        info@insol.ai
+      </a>
+      <ul class="header__social-media social-media list-reset">
+        <li class="header-social-media__item social-media__item">
+          <a href="#" class="header-social-media__link social-media__link">
+            <svg class="header-social-media__svg social-media__svg social-media-svg">
+              <use xlink:href="img/sprite.svg#i-tg"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-social-media__item social-media__item">
+          <a href="#" class="header-social-media__link social-media__link">
+            <svg class="header-social-media__svg social-media__svg social-media-svg">
+              <use xlink:href="img/sprite.svg#i-fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header-social-media__item social-media__item">
+          <a href="#" class="header-social-media__link social-media__link">
+            <svg class="header-social-media__svg social-media__svg social-media-svg">
+              <use xlink:href="img/sprite.svg#i-tw"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"  data-burger>
+      <span class="burger__line"></span>
+    </button>
+  </div>
+</header>
+
+    <main class="main main--contacts">
+      <section class="feedback">
+  <div class="container-fluid feedback__container-fluid">
+    <div class="container feedback__container">
+      <div class="feedback__content lets-talk">
+        <h2 class="section-title lets-talk__title">
+          Let&rsquo;s Talk
+        </h2>
+        <p class="lets-talk__descr">
+          Our friendly custom service team always respond to&nbsp;enquiries.
+        </p>
+        <form action="#" class="contact-pm__form form" method="POST" enctype="multipart/form-data">
+          <label class="form__label">
+            <input class="input input-name form__elem" type="text" data-validate-field="name" name="Name"
+              placeholder="Name">
+          </label>
+          <label class="form__label">
+            <input class="input input-tel form__elem" type="tel" data-validate-field="tel" name="Phone"
+              placeholder="Phone">
+          </label>
+          <label class="form__label">
+            <input class="input input-email form__elem" type="email" data-validate-field="email" name="Email"
+              placeholder="Email">
+          </label>
+          <label class="form__label">
+            <textarea class="textarea form__elem" name="Comment" id="" cols="30" rows="5"
+              placeholder="Comment"></textarea>
+          </label>
+          <button class="form__btn form__btn--send main-btn btn-reset">Send</button>
+          <label class="form__btn form__btn--file main-btn" for="myfile">
+            <svg>
+              <use xlink:href="img/sprite.svg#file"></use>
+            </svg>
+            Upload
+          </label>
+          <input class="input visually-hidden" type="file" name="file[]" multiple id="myfile">
+        </form>
+      </div>
+      <ul class="feedback__list list-reset">
+        <li class="feedback__item">
+          <svg class="feedback__svg">
+            <use xlink:href="img/sprite.svg#phone"></use>
+          </svg>
+          <a href="tel:+79800009900" class="feedback__link">+7 9 800 00 99 00</a>
+        </li>
+        <li class="feedback__item">
+          <svg class="feedback__svg">
+            <use xlink:href="img/sprite.svg#mail"></use>
+          </svg>
+          <a href="mailto:info@AgencyForce.com" class="feedback__link">info@AgencyForce.com</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer footer--contacts">
+  <div class="container footer__container grid">
+    <a href="#" class="footer__logo footer__elem logo">
+      <img loading="lazy" src="img/logo.svg" class="image" width="264" height="80" alt="Insol Logo">
+    </a>
+    <span class="footer__company footer__elem">
+      Insol Technology
+    </span>
+    <!-- <span class="footer__address footer__elem">
+      Presnenskaya emb., 8 building 1, Moscow, 123112
+    </span> -->
+    <ul class="footer__social-media footer-social-media social-media list-reset">
+      <li class="footer-social-media__item">
+        <a href="#" class="footer-social-media__link">
+          <svg class="footer-social-media__svg social-media-svg">
+            <use xlink:href="img/sprite.svg#i-in"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-media__item">
+        <a href="#" class="footer-social-media__link">
+          <svg class="footer-social-media__svg social-media-svg">
+            <use xlink:href="img/sprite.svg#i-fb"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-media__item">
+        <a href="#" class="footer-social-media__link">
+          <svg class="footer-social-media__svg social-media-svg">
+            <use xlink:href="img/sprite.svg#i-tw"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <span class="footer__privacy-policy footer__elem">
+      Privacy Policy &copy;&nbsp;2022 Insol
+    </span>
+    <!-- <a href="#" class="footer__tel footer__elem">
+      +7 9800 00 99 00
+    </a> -->
+    <a href="mailto:info@insol.ai" class="mail-link footer__mail footer__elem">
+      info@insol.ai
+    </a>
+    <nav class="nav footer__nav">
+      <ul class="nav__list list-reset flex">
+        <li class="nav__item">
+          <a href="/cases.html" class="nav__link">Cases</a>
+        </li>
+        <li class="nav__item">
+          <a href="/#i-solutions" class="nav__link">Consulting</a>
+        </li>
+        <li class="nav__item">
+          <a href="/#team" class="nav__link">Team</a>
+        </li>
+        <li class="nav__item">
+          <a href="/contacts.html" class="nav__link">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+    </ul>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

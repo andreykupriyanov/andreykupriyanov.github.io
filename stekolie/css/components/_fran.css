@@ -1,0 +1,149 @@
+.fran {
+	position: relative;
+	padding-top: 150px;
+	padding-bottom: 95px;
+}
+
+.fran__container {
+	position: relative;
+	padding-bottom: 110px;
+}
+
+.fran__container:before {
+	position: absolute;
+	top: -26px;
+	content: '';
+	width: 1170px;
+	height: 182px;
+	background: url('../../img/fran-top-border-bg.svg')0 0/cover no-repeat;
+}
+
+.fran__container:after {
+	position: absolute;
+	bottom: 80px;
+	content: '';
+	width: 1170px;
+	height: 200px;
+	background: url('../../img/fran-border-bg.svg')0 0/cover no-repeat;
+}
+
+.fran__swiper {
+	width: 1500px;
+	transform: translate(6.6%, 0px);
+}
+
+.fran-swiper__wrapper {
+	width: 100%;
+}
+
+.fran-swiper-slide__left-side {
+	width: 35%;
+	padding-top: 72px;
+}
+
+.fran-swiper__title {
+	margin-bottom: 35px;
+}
+
+.fran-swiper__descr:not(:last-child) {
+	margin-bottom: 25px;
+}
+
+.fran-swiper__table {
+	margin-top: 78px;
+}
+
+.td--l {
+	font-weight: 700;
+	width: 195px;
+	vertical-align: top;
+}
+
+.td--r {
+	font-weight: 500;
+	color: var(--blue-color);
+}
+
+.fran-swiper-slide__right-side {
+	position: relative;
+	padding-left: 87px;
+	width: 65%;
+}
+
+.fran__button {
+	position: absolute;
+	left: 106px;
+	top: 486px;
+}
+
+.fran-swiper-descr__wrapper {
+	height: 120px;
+}
+
+.fran-swiper__buttons {
+	transform: rotate(90deg);
+	width: 355px;
+	left: -131px;
+	bottom: 490px;
+}
+
+.fran-swiper__button-prev {
+	position: relative;
+}
+
+.fran-swiper__button-next:before {
+	content: '';
+	position: absolute;
+	right: 65px;
+	background-color: var(--l-grey-color);
+	width: 231px;
+	height: 1px;
+}
+
+.fran__coord {
+	top: 140px;
+}
+
+.fran__coord span:before {
+	content: '06';
+}
+
+.fran__coord span:after {
+	content: '07';
+}
+
+.fran-i {
+	display: inline-block;
+	position: relative;
+	width: 12px;
+	height: 12px;
+	background: url('../../img/bg-i.svg')0 0/cover no-repeat;
+	cursor: pointer;
+}
+
+.fran-i__txt {
+	padding: 10px;
+	position: absolute;
+	bottom: -80px;
+	left: -100px;
+	width: 400px;
+	font-size: 16px;
+	background-color: var(--white-color);
+	color: var(--black-color);
+	border-radius: 10px;
+	border: 0.5px solid var(--blue-color);
+	z-index: 200;
+	box-shadow: 7px 7px 24px -4px rgba(0,0,0,0.75);
+	transform: translate(0px, 20px);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.fran-i:hover .fran-i__txt {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+

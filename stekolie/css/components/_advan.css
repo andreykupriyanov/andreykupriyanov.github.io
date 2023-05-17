@@ -1,0 +1,111 @@
+.advan {
+	position: relative;
+	background: url('../../img/bg-elipse.png') center -1500px/auto no-repeat,
+							url('../../img/advan-points-bg.svg') 1650px 129px/auto no-repeat;
+	padding-bottom: 149px;
+}
+
+.advan__container {
+	padding-top: 170px;
+}
+
+.advan__left-side {
+	width: 40%;
+	margin-right: 7.2%;
+}
+
+.advan__title {
+	margin-top: 18px;
+	margin-bottom: 40px;
+}
+
+.advan__descr:not(:last-child) {
+	margin-bottom: 25px;
+}
+
+.advan-swiper {
+	position: relative;
+	width: 50%;
+}
+
+.advan-swiper__buttons {
+	right: 88px;
+	top: 63px;
+}
+
+.advan-swiper__button {
+	background-color: #fff;
+	z-index: 20;
+}
+
+.advan-swiper__button:before {
+	content: '';
+	position: absolute;
+	border-radius: 100%;
+	border: 6px solid white;
+	width: 48.2px;
+	height: 48.2px;
+}
+
+.advan-swiper-slide {
+	width: 100%;
+}
+
+.advan-swiper-slide svg {
+	width: 135.4px;
+	height: 135.4px;
+	margin-bottom: 45px;
+}
+
+.advan-swiper__title {
+	width: 68%;
+	font-family: 'Muller';
+	font-size: 16px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: var(--blue-color);
+	margin-bottom: 25px;
+}
+
+.advan-swiper__descr {
+	width: 90%;
+	line-height: 20.8px;
+}
+
+.advan-swiper__descr--3 {
+	margin-bottom: 20px;
+}
+
+.advan-swiper:before {
+	content: '';
+	width: 330px;
+	height: 32px;
+	position: absolute;
+	top: 57px;
+	right: 53px;
+	background: url('../../img/advan-swiper-tb.svg') 0 0/cover no-repeat;
+	z-index: 10;
+}
+
+.advan-swiper:after {
+	width: 531px;
+	height: 34px;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: url('../../img/advan-swiper-bb.svg')0 0/cover no-repeat;
+	z-index: 10;
+}
+
+.advan__coord {
+	bottom: 10px;
+}
+
+.advan__coord span:before {
+	content: '02';
+}
+
+.advan__coord span:after {
+	content: '03';
+}

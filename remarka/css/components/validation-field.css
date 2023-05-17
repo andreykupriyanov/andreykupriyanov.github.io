@@ -1,0 +1,14 @@
+.just-validate-error-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 5px;
+  border-radius: 8px;
+  padding: 5px;
+  color: var(--light-color) !important;
+  background-color: rgba(201, 0, 0, 0.5);
+}
+/*# sourceMappingURL=validation-field.css.map */

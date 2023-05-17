@@ -1,0 +1,64 @@
+.reason {
+	padding-top: 223px;
+	padding-bottom: 260px;
+}
+
+.reason__container {
+	position: relative;
+}
+
+.reason__container:before {
+	width: 1170px;
+	height: 182px;
+	position: absolute;
+	top: -80px;
+	content: '';
+	background: url('../../img/reason-tb-bg.svg') 0 0/cover no-repeat;
+}
+
+.reason__container:after {
+	width: 1170px;
+	height: 110px;
+	position: absolute;
+	bottom: -86px;
+	content: '';
+	background: url('../../img/reason-bb-bg.svg') 0 0/cover no-repeat;
+}
+
+.reason__title {
+	width: 450px;
+	margin-bottom:50px;
+}
+
+.reason__item:nth-child(1) {
+	background-image: url('../../img/reason-list-i-1.svg');
+}
+
+.reason__item:nth-child(2) {
+	background-image: url('../../img/reason-list-i-2.svg');
+}
+
+.reason__item:nth-child(3) {
+	background-image: url('../../img/reason-list-i-3.svg');
+}
+
+.reason__item {
+	background-position: 3px 0;
+	background-size: auto;
+	background-repeat: no-repeat;
+	padding-left: 100px;
+	padding-top: 25px;
+	width: 358.5px;
+}
+
+.reason__item:not(:last-child) {
+	margin-right: 41px;
+}
+
+.reason-item__title {
+	min-height: 70px;
+}
+
+.reason-item__descr {
+	line-height: 22px;
+}

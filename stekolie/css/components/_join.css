@@ -1,0 +1,34 @@
+.join {
+	background: url('../../img/pres-bg-2.png'),
+							url('../../img/pres-bg-1.png');
+	background-blend-mode: overlay;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.join__left-side {
+	padding-top: 122px;
+	padding-left: 100px;
+	width: 55%;
+}
+
+.join-left-side__title {
+	margin-bottom: 32px;
+}
+
+.join-left-side__descr {
+	margin-bottom: 64px;
+}
+
+.join__right-side {
+	width: 45%;
+}
+
+.join-right-side__img {
+	padding-left: 25px;
+}
+
+
+
+

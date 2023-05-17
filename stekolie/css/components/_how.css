@@ -1,0 +1,109 @@
+.how {
+	position: relative;
+	padding-bottom: 50px;
+}
+
+.how__container {
+	position: relative;
+	max-width: 1220px;
+}
+
+.how__container:before {
+	width: 232px;
+	height: 341.5px;
+	position: absolute;
+	content: '';
+	background: url('../../img/how-bg-points.svg')0 0/auto no-repeat;
+	bottom: 2px;
+	right: 194px;
+}
+
+.how__container:after {
+	width: 723px;
+	height: 725px;
+	position: absolute;
+	content: '';
+	background: url('../../img/how-bg-disc.svg')0 0/cover no-repeat;
+	bottom: -450px;
+	right: -405px;
+}
+
+.how__title {
+	margin-bottom: 110px;
+}
+
+.how__item {
+	width: 29.3%;
+}
+
+.how__item:not(:last-child) {
+	margin-right: 5.2%;
+}
+
+.how-item__img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 204px;
+	height: 204px;
+	background: url('../../img/how-bg-disc.svg')center/cover no-repeat;
+	margin-bottom: 85px;
+}
+
+.how-item__title {
+	min-height: 71px;
+}
+
+.how-item__descr {
+	min-height: 133px;
+}
+
+.how-item-list:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+.how-item-list__el:not(:last-child) {
+	margin-bottom: 22px;
+}
+
+.how-item-list__el {
+	padding-left: 33px;
+	background: url('../../img/how-item-el-i.svg')0 2px/auto no-repeat;
+	line-height: 21px;
+}
+
+.counter {
+	counter-reset: my-awesome-counter;
+	margin-top: 20px;
+	margin-bottom: 45px;
+}
+
+.counter__item {
+	position: relative;
+	counter-increment: my-awesome-counter;
+	margin-bottom: 1px;
+}
+
+.counter__item:before {
+	position: absolute;
+	top: 0;
+	left: -30px;
+	content: '0' counter(my-awesome-counter) '.';
+	color: var(--blue-color);
+	font-size: 12px;
+}
+
+.how__coord {
+	top: -5px;
+}
+
+.how__coord span:before {
+	content: '05';
+}
+
+.how__coord span:before {
+	content: '06';
+}
+
+
+

@@ -1,0 +1,55 @@
+.pres {
+	padding: 215px 0 202px;
+}
+
+.pres__bg {
+	position: relative;
+	width: 100%;
+	height: 453px;
+	background: url('../../img/pres-bg-2.png'),
+							url('../../img/pres-bg-1.png');
+	background-blend-mode: overlay;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.pres__bg:before {
+	width: 217px;
+	height: 108px;
+	content: '';
+	position: absolute;
+	top: -108px;
+	right: -30px;
+	background: url('../../img/pres-img-arc.svg')0 0/cover no-repeat;
+}
+
+.pres__left-side {
+	padding-left: 20px;
+	position: relative;
+}
+
+.pres-left-side__img {
+	margin-top: -70px;
+}
+
+.pres__right-side {
+	width: 50%;
+	padding-left: 42px;
+	padding-top: 125px;
+}
+
+.pres-right-side__title {
+	margin-bottom: 32px;
+}
+
+.pres-right-side__descr {
+	width: 468px;
+}
+
+.pres__button {
+	position: absolute;
+	bottom: 162px;
+	left: 10px;
+}
+
