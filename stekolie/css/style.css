@@ -1,4 +1,4 @@
-@import "./_normalize.css";
+@import "_normalize.css";
 @import "_fonts.css";
 @import "_variables.css";
 @import "_vendor.css";
@@ -6,7 +6,7 @@
 @import "_overall.css";
 
 /* components imports */
-@import "./components/_header.css";
+@import "components/_header.css";
 @import "components/_first.css";
 @import "components/_advan.css";
 @import "components/_hoheycomb-sections.css";
