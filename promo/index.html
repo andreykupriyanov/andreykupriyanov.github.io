@@ -87,6 +87,8 @@
         const tableId = '2PACX-1vShtSGyM-jNfShHjJpu5RcFIiXM89nCqX1Xgzp6AgxUgKr_Ld0yuhImCdRrPjrK1xwKfVhYOxD5ndC9';
         const sheetUrl = `https://docs.google.com{tableId}/pub?output=csv`;
 
+        console.log(sheetUrl);
+
 
         if (userId) {
             fetch(sheetUrl)
