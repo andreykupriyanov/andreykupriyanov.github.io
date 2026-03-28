@@ -84,9 +84,8 @@
         const userId = urlParams.get('id');
 
         // 2. Ссылка на вашу опубликованную таблицу (в формате CSV для легкости)
-        const tableId = 'ВАШ_ID_ТАБЛИЦЫ_ИЗ_ШАГА_1';
-        const sheetUrl =
-            `https://docs.google.com{2PACX-1vSHTsgym-jNFshHjjPU5rCFiIXM89nCQx1xGzp6agXUGkR_ld0yUhIMCDrRpjRK1xWkfVHYOXd5nDc9}/export?format=csv&gid=0`;
+        const tableId = '2PACX-1vShtSGyM-jNfShHjJpu5RcFIiXM89nCqX1Xgzp6AgxUgKr_Ld0yuhImCdRrPjrK1xwKfVhYOxD5ndC9';
+        const sheetUrl = `https://docs.google.com{tableId}/pub?output=csv`;
 
 
         if (userId) {
