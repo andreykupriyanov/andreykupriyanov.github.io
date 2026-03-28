@@ -1,14 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promo</title>
+    <title>Ваше спецпредложение</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .new-price {
+            color: #e74c3c;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        .timer-text {
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+
+        #timer {
+            color: #e74c3c;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Promo</h1>
+
+    <div class="container">
+        <!-- Ссылка на картинку вашей кофейни -->
+        <img src="https://via.placeholder.com" alt="Кофейня">
+
+        <div class="old-price" id="oldPrice">0 тг</div>
+        <div class="new-price" id="newPrice">0 тг</div>
+
+        <div class="timer-text">Ваша скидка закончится через</div>
+        <div id="timer">--:--:--</div>
+
+        <!-- Замените номер на свой для WhatsApp -->
+        <a href="https://wa.me" class="btn">Напиши нам</a>
+    </div>
+
+    <script>
+        // 1. Получаем ID из ссылки: ://mysite.com
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+
+        // 2. Ссылка на вашу опубликованную таблицу (в формате CSV для легкости)
+        const tableId = 'ВАШ_ID_ТАБЛИЦЫ_ИЗ_ШАГА_1';
+        const sheetUrl =
+            `https://docs.google.com{2PACX-1vSHTsgym-jNFshHjjPU5rCFiIXM89nCQx1xGzp6agXUGkR_ld0yUhIMCDrRpjRK1xWkfVHYOXd5nDc9}/export?format=csv`;
+
+        if (userId) {
+            fetch(sheetUrl)
+                .then(res => res.text())
+                .then(data => {
+                    const rows = data.split('\n').map(row => row.split(','));
+                    // Ищем строку, где первый столбец совпадает с нашим ID
+                    const userRow = rows.find(r => r[0] === userId);
+
+                    if (userRow) {
+                        const oldPrice = userRow[1];
+                        const newPrice = userRow[2];
+                        const hoursLimit = parseInt(userRow[3]);
+
+                        document.getElementById('oldPrice').innerText = oldPrice + ' тг';
+                        document.getElementById('newPrice').innerText = newPrice + ' тг';
+
+                        startTimer(userId, hoursLimit);
+                    }
+                });
+        }
+
+        function startTimer(id, hours) {
+            const storageKey = 'deadline_' + id;
+            let deadline = localStorage.getItem(storageKey);
+
+            if (!deadline) {
+                deadline = new Date().getTime() + (hours * 60 * 60 * 1000);
+                localStorage.setItem(storageKey, deadline);
+            }
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const t = deadline - now;
+                if (t > 0) {
+                    const h = Math.floor(t / (1000 * 60 * 60));
+                    const m = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((t % (1000 * 60)) / 1000);
+                    document.getElementById('timer').innerText = `${h}:${m}:${s}`;
+                } else {
+                    document.getElementById('timer').innerText = "00:00:00";
+                }
+            }, 1000);
+        }
+    </script>
+
+
 </body>
 
 </html>
