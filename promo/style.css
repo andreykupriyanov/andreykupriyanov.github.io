@@ -1,0 +1,86 @@
+ body {
+            font-family: "Arimo", sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .new-price {
+            color: #e74c3c;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        .timer-text {
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+
+        #timer {
+            color: #e74c3c;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: flex;
+            align-content: center;
+            margin: 0;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: tomato;
+        }
+
+        .balloon {
+    width: 50px;
+    height: 70px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    display: inline-block;
+    position: relative;
+}
+.red { background: #ff4d4d; color: #ff4d4d}
+.blue { background: #4d94ff; margin-left: -10px; color: #4d94ff;}
+
+/* Добавим "хвостик" шарику */
+.balloon::after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 22px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 10px solid currentColor; /* цвет подтянется от шарика */
+}
+
+.hb {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-weight: 900; /* Жирное начертание сделает надпись "4 года" солидной */
+    letter-spacing: -0.02em; /* Небольшое сжатие букв придаст тот самый "дизайнерский" вид Helvetica */
+}
