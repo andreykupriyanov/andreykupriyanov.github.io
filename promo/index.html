@@ -5,109 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваше спецпредложение</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 20px;
-            color: #333;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            border: 1px solid #eee;
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-        }
-
-        .new-price {
-            color: #e74c3c;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-top: -10px;
-        }
-
-        .timer-text {
-            font-size: 1.1rem;
-            margin-top: 30px;
-        }
-
-        #timer {
-            color: #e74c3c;
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            font-size: 1.5rem;
-            color: #000;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <!-- Ссылка на картинку вашей кофейни -->
-        <img src="https://via.placeholder.com" alt="Кофейня">
+        <div class="balloon red"></div>
+        <div class="balloon blue"></div>
+        <p class="hb">Нам 4 года!</p>
+        <h1>Подарочный сертификат</h1>
+        <h2>На приобретение кофейни</h2>
 
         <div class="old-price" id="oldPrice">0 тг</div>
         <div class="new-price" id="newPrice">0 тг</div>
 
-        <div class="timer-text">Ваша скидка закончится через</div>
+        <div class="timer-text">Срок скидки закончится через:</div>
         <div id="timer">--:--:--</div>
 
         <!-- Замените номер на свой для WhatsApp -->
-        <a href="https://wa.me" class="btn">Напиши нам</a>
+        <a href="https://wa.me/77478170308" class="btn">Использовать сертификат</a>
     </div>
 
     <script>
-        // 1. Получаем ID из ссылки: ://mysite.com
         const urlParams = new URLSearchParams(window.location.search);
         const userId = urlParams.get('id');
 
-        // 2. Ссылка на вашу опубликованную таблицу (в формате CSV для легкости)
-        const tableId = '2PACX-1vShtSGyM-jNfShHjJpu5RcFIiXM89nCqX1Xgzp6AgxUgKr_Ld0yuhImCdRrPjrK1xwKfVhYOxD5ndC9';
         const sheetUrl =
             'https://docs.google.com/spreadsheets/d/e/2PACX-1vSHTsgym-jNFshHjjPU5rCFiIXM89nCQx1xGzp6agXUGkR_ld0yUhIMCDrRpjRK1xWkfVHYOXd5nDc9/pub?output=csv';
-
-        console.log(sheetUrl);
-
 
         if (userId) {
             fetch(sheetUrl)
                 .then(res => {
-                    if (!res.ok) throw new Error('Таблица не найдена или не опубликована');
+                    if (!res.ok) throw new Error('Таблица не найдена');
                     return res.text();
                 })
                 .then(csvText => {
-                    // Разбиваем текст на строки
                     const lines = csvText.split(/\r?\n/);
-
-                    // Ищем нужную строку по ID (ID должен быть в первом столбце)
                     let foundRow = null;
+
                     for (let i = 0; i < lines.length; i++) {
                         const columns = lines[i].split(',');
-                        // Очищаем ID от лишних пробелов и кавычек
                         const currentId = columns[0].replace(/["']/g, "").trim();
-
                         if (currentId === userId.toString().trim()) {
                             foundRow = columns;
                             break;
@@ -115,7 +59,6 @@
                     }
 
                     if (foundRow) {
-                        // columns[1] - OldPrice, columns[2] - NewPrice, columns[3] - Hours
                         const oldP = foundRow[1].replace(/["']/g, "");
                         const newP = foundRow[2].replace(/["']/g, "");
                         const hrs = parseInt(foundRow[3]) || 48;
@@ -143,25 +86,45 @@
             if (!deadline) {
                 deadline = new Date().getTime() + (hours * 60 * 60 * 1000);
                 localStorage.setItem(storageKey, deadline);
+            } else {
+                deadline = parseInt(deadline);
             }
+
+            const timerElement = document.getElementById('timer');
+            const timerText = document.querySelector('.timer-text');
+            const actionBtn = document.querySelector('.btn');
 
             function update() {
                 const now = new Date().getTime();
                 const t = deadline - now;
+
                 if (t > 0) {
                     const h = Math.floor(t / (1000 * 60 * 60));
                     const m = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
                     const s = Math.floor((t % (1000 * 60)) / 1000);
-                    document.getElementById('timer').innerText =
-                        `${h}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
+                    timerElement.innerText = `${h}:${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
                 } else {
-                    document.getElementById('timer').innerText = "00:00:00";
+                    // ЛОГИКА ПРИ ИСТЕЧЕНИИ СРОКА:
+                    clearInterval(timerInterval);
+                    timerText.innerText = "Срок действия скидки окончен :(";
+                    timerElement.innerText = "Обратитесь к своему менеджеру";
+                    timerElement.style.fontSize = "1.2rem"; // Немного уменьшим шрифт для фразы
+
+                    // Обновляем кнопку
+                    actionBtn.innerText = "Связаться с менеджером";
+                    // Текст сообщения: "Мой срок действия сертификата истёк :("
+                    const encodedMsg = encodeURIComponent("Мой срок действия сертификата истёк :(");
+                    actionBtn.href = `https://wa.me{encodedMsg}`;
                 }
             }
-            setInterval(update, 1000);
+
+            const timerInterval = setInterval(update, 1000);
             update();
         }
     </script>
+
+
+
 
 
 </body>
